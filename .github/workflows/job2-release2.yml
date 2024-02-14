@@ -1,0 +1,30 @@
+# This workflow will build a package using Maven and then publish it to GitHub packages when a release is created
+# For more information see: https://github.com/actions/setup-java/blob/main/docs/advanced-usage.md#apache-maven-with-a-settings-path
+
+name: Maven Package
+
+on: 
+    push:
+      branches:
+        - master
+        - release2
+
+jobs:
+  job-1:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+    - name: Master & Release 2
+      run: echo 'Master & Release2'
+  job-2:
+   runs-on: ubuntu-latest
+   permissions:
+      contents: read
+      packages: write
+   if: github.branch == 'release2'
+   steps:
+     - name: Release2
+       run: echo 'Release 2'
