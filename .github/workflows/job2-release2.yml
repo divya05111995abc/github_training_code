@@ -4,8 +4,8 @@
 name: Release2
 
 on: 
-    push:
-      branches:
+ push:
+   branches:
         - master
         - release2
 
