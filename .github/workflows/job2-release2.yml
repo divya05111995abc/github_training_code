@@ -23,7 +23,7 @@ jobs:
    permissions:
       contents: read
       packages: write
-   if: github.branch == 'release2'
+   if: github.ref == 'refs/heads/release2'
    steps:
      - name: Release2
        run: echo 'Release 2'
