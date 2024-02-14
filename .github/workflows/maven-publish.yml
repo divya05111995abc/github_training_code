@@ -28,9 +28,15 @@ jobs:
         server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
         settings-path: ${{ github.workspace }} # location for the settings.xml file
 
-      
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+      
+    - name: Temporarily save jar artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: jar-artifact
+        path: ${{ github.workspace }}/target/*.war
+        retention-days: 1
       
     - name: Build and push Docker images
       uses: docker/build-push-action@v5.1.0
