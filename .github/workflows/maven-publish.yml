@@ -6,9 +6,7 @@ name: Maven Package
 on: 
     push:
       branches-ignore:
-        -release1
-        -release2
-        -release3
+        - 'release/**'
 
 jobs:
   build:
