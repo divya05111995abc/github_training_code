@@ -7,7 +7,7 @@ on:
  push:
    branches:
         - master
-        - release2
+        - 'release2'
 
 jobs:
   job-1:
