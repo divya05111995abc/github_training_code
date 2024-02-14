@@ -6,7 +6,8 @@ name: Release2
 on: 
  push:
    branches:
-        - "release2"
+        - main
+        - release2
 
 jobs:
   job-1:
